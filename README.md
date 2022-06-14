@@ -8,13 +8,11 @@
 
 ## Table of contents
 
-- [Attendance System](#attendance-system)
-  - [Table of contents](#table-of-contents)
-  - [📄Summary](#summary)
-  - [💻Made With](#made-with)
-  - [🚀Installation](#installation)
-  - [🔗 Quick Links](#-quick-links)
-  - [👨‍💻Contributors](#contributors)
+- [📄Summary](#summary)
+- [💻Made With](#made-with)
+- [🚀Installation](#installation)
+- [🔗Quick Links](#-quick-links)
+- [👨‍💻Contributors](#contributors)
 
 ## 📄Summary
 
