@@ -5,8 +5,9 @@ const bcrypt = require('bcryptjs');
  * 
  * @param {express.Request} req 
  * @param {express.Response} res 
+ * @param {express.NextFunction} next
  */
-const register = async (req, res) => {
+const register = async (req, res, next) => {
     // destructing required information for registration 
     const {name, email , password } = req.body;
     // basic level validation
@@ -16,7 +17,8 @@ const register = async (req, res) => {
         })
         return;
     }
-    // check for user with same email address
+    try {
+        // check for user with same email address
     let user = await User.findOne({email});
     if (user) {
         res.status(400).json({
@@ -35,6 +37,9 @@ const register = async (req, res) => {
         message: "user created successfully.",
         user
     })
+    } catch (error) {
+        next(error)
+    }
 } 
 
 module.exports = {
