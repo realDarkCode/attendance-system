@@ -19,7 +19,7 @@
 ## 📄Summary
 
 A simple rest api to manage attendance system for online classes.admin will open attendance and student have to login to their account and give attendance. Admin can view attendance summery.  
-**Details:** [Requirement Analysis](docs/Requirements.md)
+**Details:** [Requirement Analysis](docs/Requirement-Analysis.md)
 
 ## 💻Made With
 
@@ -58,7 +58,7 @@ Must have [Nodejs](https://nodejs.org/en/download/), [Git](https://git-scm.com/d
 ## 🔗 Quick Links
 
 - [Requirement Analysis](docs/Requirement-Analysis.md)
-- [Database Model](docs/Model.md)
+- [Database Model](docs/Database-Model.md)
 - [API](docs/Api.md)
 
 ## 👨‍💻Contributors
