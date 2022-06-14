@@ -5,7 +5,8 @@ const connectDb = require("./db/db");
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 8000;
-connectDb(process.env.DATABASE_URI).then(() => {
+const DATABASE_URI = process.env.DATABASE_URI || "mongodb://localhost:27017/attendance-system"
+connectDb(DATABASE_URI).then(() => {
   console.log("Database Connected Successfully.")
   server.listen(PORT, () => {
     console.log(`Server Listing on PORT ${PORT}.`);

@@ -1,4 +1,4 @@
-require("dotenv").config("../.env");
+require("dotenv").config();
 const express = require("express");
 const { notFoundHandler, errorHandler } = require("./error");
 const app = express();
