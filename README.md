@@ -1,16 +1,32 @@
 # Attendance System
 
-**Project-Status:** 🟢`Active`
+---
+
+**Project-Status:** 🟢 `Active`
+
 **Project-timespan:** 📅 `May-2022` - `Present`
 
-A simple rest api to manage attendance system for online classes.admin will open attendance and student have to login to their account and give attendance. Admin can view attendance summery.
-📑 details: [Requirement Analysis](docs/Requirements.md)
+## Table of contents
 
-## 💻Tech-Stack
+- [Attendance System](#attendance-system)
+  - [Table of contents](#table-of-contents)
+  - [📄Summary](#summary)
+  - [💻Made With](#made-with)
+  - [🚀Installation](#installation)
+  - [🔗 Quick Links](#-quick-links)
+  - [👨‍💻Contributors](#contributors)
 
-- Language: [Nodejs](https://nodejs.org/en/docs/)
-- Framework: [ExpressJs](https://expressjs.com/)
-- Database: [MongoDB](https://www.mongodb.com/)
+## 📄Summary
+
+A simple rest api to manage attendance system for online classes.admin will open attendance and student have to login to their account and give attendance. Admin can view attendance summery.  
+**Details:** [Requirement Analysis](docs/Requirements.md)
+
+## 💻Made With
+
+- `Language:` [Nodejs](https://nodejs.org/en/docs/)
+- `Framework:` [ExpressJs](https://expressjs.com/)
+- `Database:` [MongoDB](https://www.mongodb.com/)
+- `❤️`
 
 ## 🚀Installation
 
@@ -38,3 +54,15 @@ Must have [Nodejs](https://nodejs.org/en/download/), [Git](https://git-scm.com/d
   ```bash
   $ yarn start
   ```
+
+## 🔗 Quick Links
+
+- [Requirement Analysis](docs/Requirement-Analysis.md)
+- [Database Model](docs/Model.md)
+- [API](docs/Api.md)
+
+## 👨‍💻Contributors
+
+<a href="https://github.com/realDarkCode/attendance-system">
+<img src="https://contrib.rocks/image?repo=realdarkcode/attendance-system" />
+</a>
