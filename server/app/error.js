@@ -5,14 +5,15 @@ const notFoundHandler = (_req, _res, next) => {
 };
 
 const errorHandler = (error, _req, res, _next) => {
-  console.log(error);
+
   if (error.status) {
     return res.status(error.status).json({
       message: error.message,
     });
   }
+  console.log(error);
   res.status(500).json({
-    message: "Something went wrong.",
+    message: "internal server error occurred.",
   });
 };
 
