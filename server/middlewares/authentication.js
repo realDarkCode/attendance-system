@@ -18,7 +18,7 @@ const authenticate = async (req, res, next) => {
     // verify the token
     token = token.split(" ")[1];
 
-    const decoded = jwt.verify(token, process.env.JTW_SIGNATURE);
+    const decoded = jwt.verify(token, process.env.JWT_SIGNATURE);
     // check if there is a user in database
     const user = await User.findById(decoded._id);
     if (!user) {
