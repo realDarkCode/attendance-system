@@ -2,16 +2,19 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const error = require("../utils/error");
 const { findUserByProperty, createNewUser } = require("./user");
-const registerService = async ({ name, email, password }) => {
-  // check for user with same email address
+const registerService = async ({
+  name,
+  email,
+  password,
+  roles,
+  accountStatus,
+}) => {
   let user = await findUserByProperty("email", email);
   if (user) throw error("User already exist", 400);
 
-  // creating new user
-  // hashing user password
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
-  return createNewUser({ name, email, password: hash });
+  return createNewUser({ name, email, password: hash, roles, accountStatus });
 };
 const loginService = async ({ email, password }) => {
   // check if there any user with that email

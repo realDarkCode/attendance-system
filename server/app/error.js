@@ -5,11 +5,12 @@ const notFoundHandler = (_req, _res, next) => {
 };
 
 const errorHandler = (error, _req, res, _next) => {
-  const message = error.message ? error.message : "Something went wrong";
-  const status = error.status ? error.status : 500;
-
-  if (error.status == 500) console.log(error);
-  res.status(status).json({ message });
+  if (!error.status) {
+    console.log(error);
+    error.status = 500;
+    error.message = "Something went wrong";
+  }
+  res.status(error.status).json({ message: error.message });
 };
 
 module.exports = {
