@@ -7,10 +7,10 @@ const findAttendanceByProperty = (key, value) => {
 	}
 	return AdminAttendance.findOne({ [key]: value });
 };
-const createAdminAttendance = async ({ timeLimit }) => {
+const createAdminAttendance = ({ timeLimit }) => {
 	return new AdminAttendance({ timeLimit });
 };
-const disableAttendance = async (id) => {
+const disableAttendance = (id) => {
 	return AdminAttendance.findByIdAndUpdate(
 		id,
 		{
@@ -19,8 +19,12 @@ const disableAttendance = async (id) => {
 		{ new: true }
 	);
 };
+const attendanceStatus = () => {
+	return findAttendanceByProperty("status", "RUNNING");
+};
 module.exports = {
 	createAdminAttendance,
 	findAttendanceByProperty,
 	disableAttendance,
+	attendanceStatus,
 };

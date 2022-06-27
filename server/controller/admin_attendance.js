@@ -1,3 +1,4 @@
+const { addMinutes, isAfter } = require("date-fns");
 const adminAttendanceService = require("../service/admin_attendance");
 const error = require("../utils/error");
 const postEnable = async (req, res, next) => {
@@ -36,10 +37,31 @@ const getDisable = async (_req, res, next) => {
 			runningAttendance.id
 		);
 		await disabledAttendance.save();
-		return res.status(200).json({ message: "success", disabledAttendance });
+		return res
+			.status(200)
+			.json({ message: "attendance disabled", disabledAttendance });
 	} catch (err) {
 		next(err);
 	}
 };
 
-module.exports = { postEnable, getDisable };
+const getStatus = async (_req, res, next) => {
+	try {
+		const runningAttendance = await adminAttendanceService.attendanceStatus();
+		if (!runningAttendance) {
+			throw error("No running Attendance", 400);
+		}
+		const started = addMinutes(
+			new Date(runningAttendance.createdAt),
+			runningAttendance.timeLimit
+		);
+		if (isAfter(new Date(), started)) {
+			runningAttendance.status = "COMPLETED";
+			await runningAttendance.save();
+		}
+		res.status(200).json(runningAttendance);
+	} catch (err) {
+		next(err);
+	}
+};
+module.exports = { postEnable, getDisable, getStatus };
