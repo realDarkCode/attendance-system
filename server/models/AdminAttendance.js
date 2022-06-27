@@ -9,7 +9,7 @@ const adminAttendanceSchema = new Schema(
 			min: 5,
 			default: 5,
 		},
-		Status: {
+		status: {
 			type: String,
 			required: true,
 			enum: ["RUNNING", "COMPLETED"],
